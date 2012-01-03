@@ -35,6 +35,45 @@
 </section>
 
 <section class="slide">
+  <h2>我们遇到的问题</h2>
+  <ul>
+    <li>
+      <h3>异地开发的痛苦</h3>
+    </li>
+    <li>
+      <h3>checkout过JBoss的源码吗？查看过log吗？</h3>
+    </li>
+    <li>
+      <h3>集权。。。</h3>
+    </li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>痛苦的合并</h2>
+  <ul>
+    <li>
+      <h3>记录合并的版本号</h3>
+    </li>
+    <li>
+      <h3>向分支bugfix？大分支合并？多分支合并？</h3>
+    </li>
+    <li>
+      <h3>大量“非人为”的冲突</h3>
+    </li>
+    <li>
+      <h3>增量保存的缺陷</h3>
+    </li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>到处都是.svn</h2>
+  <ul>
+    <li>
+      <h3>目录的复制和粘贴</h3>
+    </li>
+  </ul>
+</section>
+<section class="slide">
   <h2>Git的特点</h2>
   <ul>
     <li>
@@ -44,19 +83,35 @@
       <h3>本地仓库</h3>
     </li>
     <li>
-      <h3>只有一份.git</h3>
-      <p>不污染子目录</p>
-    </li>
-    <li>
       <h3>保存全量内容(snapshot)</h3>
       <p>极大的降低了合并的难度</p>
+    </li>
+    <li>
+      <h3>只有一份.git</h3>
+      <p>不污染子目录</p>
     </li>
     <li>
       <h3>给力的命令行</h3>
     </li>
   </ul>
 </section>
-
+<section class="slide">
+  <h2>git的对象模型</h2>
+  <ul>
+    <li>
+      <h3>Blob</h3>
+      <p></p>
+    </li>
+    <li>
+      <h3>Tree</h3>
+      <p></p>
+    </li>
+    <li>
+      <h3>Commit</h3>
+      <p></p>
+    </li>
+  </ul>
+</section>
 <section class="slide">
   <h2>使用前的准备</h2>
   <ol>
@@ -223,219 +278,254 @@
         <li>target/</li>
       </ul>  
     </li>
+  </ul>
+</section>
+<section class="slide" id="alias">
+  <h2>为指令添加别名</h2>
+  <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git config alias.&lt;alias&gt; &lt;command&gt;</h3>
+      <p>将&lt;alias&gt;作为命令&lt;command&gt;的别名</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>或者直接修改.git/config文件</h3>
+    </li>
+    <li>
+      <h3>也可以添加--global参数使别名全局有效</h3>
+      <p>将修改~/.gitconfig文件</p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>善用分支</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>小步快走的开发方式</h3>
+      <p>需要面对两个问题：</p>
+      <ul>
+        <li>开发的临时状态</li>
+        <li>合并的复杂度</li>
+      </ul>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
+      <h3>Git的分支是简单且有效的</h3>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>一个功能（特性）开发的流程</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git branch</h3>
+      <p>查看分支</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git branch &lt;branchName&gt;</h3>
+      <p>创建分支</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git checkout &lt;branchName&gt;</h3>
+      <p>切换分支</p>
+      <ul>
+        <li>git checkout -b &lt;branchName&gt;</li>
+        <p>创建并切换分支</p>
+      </ul>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>一个功能（特性）开发的流程2</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>添加、修改文件</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>提交变更</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>切换到合并的目标分支</h3>
+      <p>如master分支</p>
+    </li>
+    <li>
+      <h3>git merge &lt;branchName&gt;</h3>
+      <p>将&lt;branchName&gt;的所有变更合并到当前分支</p>
+    </li>
+  </ul>
+</section>
+<section class="slide" id="fast-forward">
+  <h2>fast-forward</h2>
+  <ul>
+    <li>
+      <h3>合并分支可能会产生fast-forward情况</h3>
+    </li>
+    <li>
+      <h3>--no-ff参数</h3>
+      <p>强制不使用fast-forward，比如需要保留分支的记录</p>
+    </li>
+  </ul>
+</section>
+<section class="slide" id="del-branch">
+  <h2>删除分支</h2>
+  <ul>
+    <li>
+      <h3>git branch -d &lt;branchName&gt;</h3>
+      <p>删除分支（如果需要）</p>
+    </li>
+    <li>
+      <h3>如果合并不完全则会删除失败</h3>
+    </li>
+    <li>
+      <h3>git diff ...&lt;branchName&gt;</h3>
+      <p>当前分支与目标分支的交集与目标分支的差异</p>
+    </li>
+    <li>
+      <h3>使用-D参数强制删除分支</h3>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>强大的diff</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>工作目录的文件与索引</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>分支与分支</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>版本与版本</h3>
+    </li>
+    <li>
+      <h3>其他...</h3>
+      <p>git help diff</p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>解决冲突</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>冲突的产生</h3>
+      <p>两个合并的分支修改了同一处内容</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>两个分支的维护者共同编辑冲突文件</h3>
+      <p>记得删除冲突标记</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>将冲突文件添加索引并提交</h3>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>多用户协作</h2>
+</section>
+<section class="slide">
+  <h2>传输协议</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>file</h3>
+      <ul>
+        <li>/path/to/repo.git/</li>
+        <li>file:///path/to/repo.git/</li>
+      </ul>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>ssh</h3>
+      <p>ssh://[user@]host.xz[:port]/path/to/repo.git/</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>http[s]</h3>
+      <p>http[s]://host.xz[:port]/path/to/repo.git/</p>
+    </li>
+    <li>
+      <h3>git</h3>
+      <p>git://host.xz[:port]/path/to/repo.git/</p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>获取副本</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
+      <h3>git clone &lt;repo.git&gt;</h3>
+      <p>可以认为是创建了一个远程分支</p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>多用户协作流程</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>个人开发流程</h3>
+      <p>开分支、完成功能、合并等</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git pull &lt;remote&gt;</h3>
+      <p>获取远端更新</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git push &lt;remote&gt;</h3>
+      <p>将更新推送到远端，需要写权限</p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>创建中心库</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>可以直接拷贝.git作为中心库</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
+      <h3>TODO: 创建bare repo</h3>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>有中心库的开发流程</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>从中心库clone</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>个人开发流程</h3>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>从中心库pull变更</h3>
+    </li>
+    <li>
+      <h3>push变更到中心库</h3>
+    </li>
+  </ul>
+</section>
+<section class="slide" id="git-flow">
+  <h2>git flow</h2>
+  <ul>
+    <li>
+      <h3>A successful Git branching model</h3>
+      <p><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
+  <h2>查找BUG的利器</h2>
   <ul>
     <li>
-      <h3></h3>
-      <p></p>
+      <h3>git blame &lt;file&gt;</h3>
+      <p>查看指定文件每一行的最后版本及修改者</p>
     </li>
     <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
+      <h3>git bisect</h3>
+      <p>帮助你快速定位到有问题的版本</p>
     </li>
   </ul>
 </section>
 <section class="slide">
-  <h2></h2>
-  <ul>
-    <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
-    </li>
-    <li>
-      <h3></h3>
-      <p></p>
-    </li>
-  </ul>
+  <h1>Q & A</h1>
+</section>
+<section class="slide">
+<h1>希望给你带来了帮助
+  Bye~</h1>
 </section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
