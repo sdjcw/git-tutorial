@@ -42,10 +42,9 @@
     </li>
     <li>
       <h3><a href="https://github.com/sdjcw/git-tutorial">https://github.com/sdjcw/git-tutorial</a></h3>
-      <p>教程github地址</p>
     </li>
     <li>
-      <h3>Java中间件团队</h3>
+      <h3>产品技术部-通用产品团队</h3>
     </li>
     <li>
       <h3>技术大学其他课程</h3>
@@ -174,11 +173,11 @@
     </li>
     <li class="slide">
       <h3>git status</h3>
-      <p>查看索引状态</p>
+      <p>查看暂存区状态</p>
     </li>
     <li class="slide">
       <h3>git add &lt;file&gt;</h3>
-      <p>将变更添加到索引</p>
+      <p>将变更添加到暂存区</p>
     </li>
     <li class="slide">
       <h3>git commit</h3>
@@ -303,24 +302,43 @@
   </ul>
 </section>
 
-<section class="slide" id="git-index">
-  <h2>索引的操作</h2>
+<section class="slide">
+  <h2>暂存区</h2>
+  <img src="imgs/stage.png" alt="暂存区" />
   <ul>
     <li class="slide">
-      <h3>索引作为一个暂存区，能使你“变更的”和“需要提交的”分开</h3>
+      <h3>能使你“变更的”和“需要提交的”分开</h3>
       <p>甚至支持一个文件只提交一部分</p>
     </li>
     <li class="slide">
+      <h3>甚至支持一个文件只提交一部分</h3>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>文件状态</h2>
+  <img src="imgs/file-status-lifecycle.png" alt="文件状态" />
+</section>
+
+<section class="slide">
+  <h2>暂存区的操作</h2>
+  <ul>
+    <li class="slide">
       <h3>git add &lt;file&gt;</h3>
-      <p>将变更添加到索引</p>
       <ul>
-        <li>新增的文件</li>
-        <li>修改的文件</li>
+        <li>新增的文件(add the file)</li>
+        <li>修改的文件(stage the file)</li>
       </ul>
     </li>
     <li class="slide">
       <h3>git reset HEAD &lt;file&gt;</h3>
-      <p>将变更从索引中移除，HEAD为版本库“最年轻”的版本</p>
+      <p>将变更从暂存区中移除(remove the file)</p>
+      <p>HEAD为版本库“最年轻”的版本</p>
+    </li>
+    <li class="slide">
+      <h3>git commit</h3>
+      <p>将暂存区内容提交</p>
     </li>
   </ul>
 </section>
@@ -333,8 +351,9 @@
       <p>查看工作目录与HEAD的差异</p>
     </li>
     <li class="slide">
-      <h3>git diff --cached</h3>
-      <p>查看索引与HEAD的差异</p>
+      <h3>git diff --staged</h3>
+      <p>查看暂存区与HEAD的差异</p>
+      <p>Git 1.6.1以前使用: git diff --cached</p>
     </li>
   </ul>
 </section>
