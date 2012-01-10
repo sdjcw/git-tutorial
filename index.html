@@ -105,7 +105,9 @@
     </li>
     <li class="slide">
       <h3>保存全量内容(snapshot)</h3>
-      <p>极大的降低了合并的难度</p>
+    </li>
+    <li class="slide">
+      <h3>超轻量的分支</h3>
     </li>
     <li class="slide">
       <h3>只有一份.git</h3>
@@ -113,27 +115,6 @@
     </li>
     <li class="slide">
       <h3>给力的命令行</h3>
-    </li>
-  </ul>
-</section>
-<section class="slide">
-  <h2>git的对象模型</h2>
-  <ul>
-    <li class="slide">
-      <h3>指纹字串——SHA-1哈希值</h3>
-      <p>长度为40的十六进制字符串</p>
-    </li>
-    <li class="slide">
-      <h3>Blob</h3>
-      <p></p>
-    </li>
-    <li class="slide">
-      <h3>Tree</h3>
-      <p></p>
-    </li>
-    <li class="slide">
-      <h3>Commit</h3>
-      <p></p>
     </li>
   </ul>
 </section>
@@ -158,7 +139,7 @@
       <h3>git init</h3>
     </li>
     <li class="slide">
-      <h3>TODO 展示目录结构</h3>
+      <h3>目录结构</h3>
       <p></p>
     </li>
   </ul>
@@ -200,6 +181,109 @@
       <p>提交变更</p>
     </li>
   </ul>
+</section>
+
+<section class="slide">
+  <h2>查看日志</h2>
+  <ul>
+    <li class="slide">
+      <h3>git log</h3>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>版本号</h2>
+  <ul>
+    <li class="slide">
+      <h3>指纹字串——SHA-1哈希值</h3>
+      <p>长度为40的十六进制字符串</p>
+    </li>
+    <li class="slide">
+      <h3>用来标识存储的对象</h3>
+      <p></p>
+    </li>
+    <li class="slide">
+      <h3>直接使用前5位即可</h3>
+      <p></p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>git的对象模型</h2>
+  <ul>
+    <li class="slide">
+      <h3>Commit</h3>
+      <p>代表一次提交</p>
+    </li>
+    <li class="slide">
+      <h3>Tree</h3>
+      <p>代表一个目录</p>
+    </li>
+    <li class="slide">
+      <h3>Blob</h3>
+      <p>代表一个文件</p>
+    </li>
+    <li class="slide">
+      <h3>tag</h3>
+      <p>标记一个提交</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Commit</h2>
+  <img src="imgs/commit.png" alt="Commit模型" />
+  <ul>
+    <li class="slide">
+      <h3>commit指向一个tree</h3>
+      <p>git show -s --pretty=raw &lt;commitSHA1&gt;</p>
+    </li>
+    <li class="slide">
+      <h3>parent指向上一个commit</h3>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Tree</h2>
+  <img src="imgs/tree.png" alt="Tree模型" />
+  <ul>
+    <li class="slide">
+      <h3>指向一组tree或blob</h3>
+      <p>git ls-tree &lt;treeSHA1&gt;</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Blob</h2>
+  <img src="imgs/blob.png" alt="Blob模型" />
+  <ul>
+    <li class="slide">
+      <h3>由文件内容计算出SHA1值</h3>
+    </li>
+    <li class="slide">
+      <h3>git show &lt;blobSHA1&gt;</h3>
+      <p>直接查看文件内容</p>
+    </li>
+    <li class="slide">
+      <h3>不包含文件名</h3>
+      <p></p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>一个完整的commit</h2>
+  <img src="imgs/dirtree.png" alt="一个完整的commit" />
+  <img src="imgs/modules.png" alt="一个完整的commit" />
+</section>
+
+<section class="slide">
+  <h2>Tag</h2>
+  <img src="imgs/tag.png" alt="Tag模型" />
 </section>
 
 <section class="slide" id="git-help">
@@ -593,6 +677,26 @@
 <h1>希望给你带来了帮助
   Bye~</h1>
 </section>
+
+<!--
+<section class="slide">
+  <h2></h2>
+  <ul>
+    <li class="slide">
+      <h3></h3>
+      <p></p>
+    </li>
+    <li class="slide">
+      <h3></h3>
+      <p></p>
+    </li>
+    <li class="slide">
+      <h3></h3>
+      <p></p>
+    </li>
+  </ul>
+</section>
+-->
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
 <a href="#" class="deck-next-link" title="Next">&#8594;</a>
