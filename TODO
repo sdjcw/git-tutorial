@@ -1,11 +1,7 @@
-分支其实就是从某个提交对象往回看的历史
-head指向当前分支
-一个分支就是写一个41字节的文件
-Git 会把工作目录的内容恢复为检出某分支时它所指向的那个提交对象的快照
+暂存区部分调整到dirs后
+
 git branch --merge
 使用vimdiff进行差异比较
-使用git diff --staged 代替cached
-git log --stat 显示简要状态，修改行数
 介绍fetch指令
 git tag
 删除远程分支git push [远程名] :[分支名
