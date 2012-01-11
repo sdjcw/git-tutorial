@@ -549,6 +549,23 @@
 </section>
 
 <section class="slide" id="del-branch">
+  <h2>对分支的其他操作</h2>
+  <ul>
+    <li class="slide">
+      <h3>git branch --no-merged</h3>
+      <p>列出没有与当前分支合并的分支</p>
+    </li>
+    <li class="slide">
+      <h3>git diff ...&lt;branchName&gt;</h3>
+      <p>当前分支与目标分支的交集与目标分支的差异</p>
+    </li>
+    <li class="slide">
+      <h3>使用-D参数强制删除分支</h3>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="del-branch">
   <h2>删除分支</h2>
   <ul>
     <li class="slide">
@@ -559,11 +576,8 @@
       <h3>如果合并不完全则会删除失败</h3>
     </li>
     <li class="slide">
-      <h3>git diff ...&lt;branchName&gt;</h3>
-      <p>当前分支与目标分支的交集与目标分支的差异</p>
-    </li>
-    <li class="slide">
       <h3>使用-D参数强制删除分支</h3>
+      <p>丢弃实验性分支时使用</p>
     </li>
   </ul>
 </section>
@@ -770,10 +784,11 @@ $ git merge iss53</code></pre>
   <h2>创建中心库</h2>
   <ul>
     <li class="slide">
-      <h3>可以直接拷贝.git作为中心库</h3>
+      <h3>git init --bare</h3>
+      <p>创建一个裸仓库，不包含工作目录</p>
     </li>
     <li class="slide">
-      <h3>TODO: 创建bare repo</h3>
+      <h3>也可以直接拷贝.git作为中心库</h3>
     </li>
   </ul>
 </section>
@@ -794,6 +809,20 @@ $ git merge iss53</code></pre>
     </li>
   </ul>
 </section>
+
+<section class="slide">
+  <h2>GitHub</h2>
+  <ul>
+    <li class="slide">
+      <h3><a href="https://github.com/">https://github.com/</a></h3>
+    </li>
+    <li class="slide">
+      <h3>不只是一个git仓库托管</h3>
+      <p></p>
+    </li>
+  </ul>
+</section>
+
 <section class="slide" id="git-flow">
   <h2>git flow</h2>
   <ul>
