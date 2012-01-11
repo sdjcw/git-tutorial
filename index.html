@@ -230,6 +230,46 @@
 </section>
 
 <section class="slide">
+  <h2>暂存区</h2>
+  <img src="imgs/stage.png" alt="暂存区" />
+  <ul>
+    <li class="slide">
+      <h3>能使你“变更的”和“需要提交的”分开</h3>
+    </li>
+    <li class="slide">
+      <h3>甚至支持一个文件只提交一部分</h3>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>文件状态</h2>
+  <img src="imgs/file-status-lifecycle.png" alt="文件状态" />
+</section>
+
+<section class="slide">
+  <h2>暂存区的操作</h2>
+  <ul>
+    <li class="slide">
+      <h3>git add &lt;file&gt;</h3>
+      <ul>
+        <li>新增的文件(add the file)</li>
+        <li>修改的文件(stage the file)</li>
+      </ul>
+    </li>
+    <li class="slide">
+      <h3>git reset HEAD &lt;file&gt;</h3>
+      <p>将变更从暂存区中移除(remove the file)</p>
+      <p>HEAD为版本库“最年轻”的版本</p>
+    </li>
+    <li class="slide">
+      <h3>git commit</h3>
+      <p>将暂存区内容提交</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
   <h2>查看日志</h2>
   <ul>
     <li class="slide">
@@ -336,45 +376,6 @@
   <img src="imgs/tag.png" alt="Tag模型" />
 </section>
 
-<section class="slide">
-  <h2>暂存区</h2>
-  <img src="imgs/stage.png" alt="暂存区" />
-  <ul>
-    <li class="slide">
-      <h3>能使你“变更的”和“需要提交的”分开</h3>
-    </li>
-    <li class="slide">
-      <h3>甚至支持一个文件只提交一部分</h3>
-    </li>
-  </ul>
-</section>
-
-<section class="slide">
-  <h2>文件状态</h2>
-  <img src="imgs/file-status-lifecycle.png" alt="文件状态" />
-</section>
-
-<section class="slide">
-  <h2>暂存区的操作</h2>
-  <ul>
-    <li class="slide">
-      <h3>git add &lt;file&gt;</h3>
-      <ul>
-        <li>新增的文件(add the file)</li>
-        <li>修改的文件(stage the file)</li>
-      </ul>
-    </li>
-    <li class="slide">
-      <h3>git reset HEAD &lt;file&gt;</h3>
-      <p>将变更从暂存区中移除(remove the file)</p>
-      <p>HEAD为版本库“最年轻”的版本</p>
-    </li>
-    <li class="slide">
-      <h3>git commit</h3>
-      <p>将暂存区内容提交</p>
-    </li>
-  </ul>
-</section>
 
 <section class="slide" id="git-diff">
   <h2>查看差异</h2>
